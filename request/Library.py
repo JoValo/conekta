@@ -16,10 +16,10 @@ class Book:
 			self.author = ""
 			self._response = _response
 
-	def _url(self,path):
-		return 'http://localhost:9000' + path
+	def _url(self,params):
+		return 'http://localhost:9000' + params
 
-	def create(self):
+	def postBook(self):
 		print self.title
 		print self.author
 		url = self._url('/books')
@@ -28,7 +28,7 @@ class Book:
 		self._response.ok = "true"
 		return res
 
-	def get(self,id):
+	def getBook(self,id):
 		url = self._url('/books/{}'.format(id))
 		res = requests.get(url)
 		if(res.json()['ok'] == False):

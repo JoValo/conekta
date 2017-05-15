@@ -2,7 +2,7 @@
 
 const Hapi = require('hapi');
 const Books = require('./model/books').Books;
-const Db = require('./database/database');
+const Database = require('./database/database');
 
 const server = new Hapi.Server();
 server.connection({ port: 9000, host: 'localhost' });

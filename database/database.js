@@ -4,13 +4,13 @@ const Mongoose = require('mongoose');
 
 Mongoose.connect('mongodb://127.0.0.1/conekta');  
 
-var db = Mongoose.connection;
+var database = Mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error'));
+database.on('error', console.error.bind(console, 'Error: Connection with database failed'));
 
-db.once('open', function callback() {
-  console.log("Connection with database succeeded.");
+database.once('open', function callback() {
+  console.log("Connection with database is successful");
 });
 
 exports.Mongoose = Mongoose;
-exports.db = db;
+exports.database = database;
